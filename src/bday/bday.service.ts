@@ -9,9 +9,6 @@ export class BdayService {
   constructor(@InjectModel('Bday') private readonly bdayModel: Model<Bday>) {}
 
   async create(createBdayDto: CreateBdayDto): Promise<Bday> {
-    /* const exists = await this.check(createBdayDto.userId);
-    const newBday = await this.bdayModel.findOneAndUpdate({ userId: createBdayDto.userId }, { $setOnInsert: createBdayDto }, { upsert: true, new: true, useFindAndModify: false });
-    return [newBday, exists]; */
     const newBday = new this.bdayModel(createBdayDto);
     return await newBday.save();
   }
