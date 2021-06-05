@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Res, HttpStatus, NotFoundException, Query, UseFilters } from '@nestjs/common';
-import { MongoExceptionFilter } from 'src/mongo-exceptions.filter';
+import { MongoExceptionFilter } from '../mongo-exceptions.filter';
 import { BdayService } from './bday.service';
 import { CreateBdayDto } from './dto/create-bday.dto';
 
