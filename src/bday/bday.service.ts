@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Bday } from 'src/interfaces/bday.interface';
+import { Bday } from '../interfaces/bday.interface';
 import { CreateBdayDto } from './dto/create-bday.dto';
 
 @Injectable()
