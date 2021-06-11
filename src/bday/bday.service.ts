@@ -14,7 +14,7 @@ export class BdayService {
   }
 
   async findAll(): Promise<Bday[]> {
-    const bdays = await this.bdayModel.find().exec();
+    const bdays = await this.bdayModel.find().sort({ date: 1 }).exec();
     return bdays;
   }
 
