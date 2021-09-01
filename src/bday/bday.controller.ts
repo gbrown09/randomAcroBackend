@@ -17,13 +17,13 @@ export class BdayController {
     });
   }
 
-  @Get('bdays')
+  @Get('/bdays')
   async findAll(@Res() res) {
     const bdays = await this.bdayService.findAll();
     return res.status(HttpStatus.OK).json(bdays);
   }
 
-  @Get('bday/:id')
+  @Get('/bday/:id')
   async findOne(@Res() res, @Param('id') id: string) {
     const bday = await this.bdayService.findOne(id);
     if (!bday) throw new NotFoundException('bday does not exist!');
