@@ -1,4 +1,4 @@
-export interface Car extends Document {
+export interface CarOld extends Document {
   owner: string;
   year: number;
   make: string;

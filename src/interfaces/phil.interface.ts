@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
 
-export interface Phil extends Document {
+export interface PhilOld extends Document {
   philText: string;
 }
