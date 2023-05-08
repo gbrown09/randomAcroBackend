@@ -1,6 +1,6 @@
 ## Description
 
-backend API for Random Acro that uses NestJS to store things in a MongoDB backend
+Backend API for Random Acro that uses NestJS to store things in a MongoDB backend
 
 ## Installation
 
