@@ -1,6 +1,15 @@
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-export const BdaySchema = new mongoose.Schema({
-  userId: String,
-  date: String,
-});
+export type BdayDocument = Bday & Document;
+
+@Schema()
+export class Bday {
+  @Prop()
+  userId: string;
+
+  @Prop()
+  date: string;
+}
+
+export const BdaySchema = SchemaFactory.createForClass(Bday);

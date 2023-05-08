@@ -1,4 +1,4 @@
-export interface Ban extends Document {
+export interface BanInt extends Document {
   user: string;
   multiplier: number;
   pocketBan: boolean;

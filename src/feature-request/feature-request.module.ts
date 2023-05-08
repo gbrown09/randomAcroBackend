@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { FeatureRequestService } from './feature-request.service';
-import { FeatureRequestController } from './feature-request.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { FeatureRequest } from '../schemas/featureRequest.schema';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { FeatureRequest, FeatureRequestSchema } from '../schemas/featureRequest.schema';
+import { FeatureRequestController } from './feature-request.controller';
+import { FeatureRequestService } from './feature-request.service';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'FeatureRequest', schema: FeatureRequest }], 'featureRequests')],
+  imports: [MongooseModule.forFeature([{ name: FeatureRequest.name, schema: FeatureRequestSchema, collection: 'featurerequests' }])],
   controllers: [FeatureRequestController],
   providers: [FeatureRequestService],
 })

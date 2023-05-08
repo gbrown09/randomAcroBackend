@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface FeatureRequest extends Document {
+export interface FeatureRequestOld extends Document {
   userId: string;
   request: string;
   userName: string;

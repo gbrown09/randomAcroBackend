@@ -17,23 +17,6 @@ import { configuration } from './config/configuration';
       load: [configuration],
     }),
     MongooseModule.forRootAsync({
-      connectionName: 'bdays',
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        uri: `${configService.get<string>('mongodb.uri')}bdays?authSource=admin`,
-      }),
-      inject: [ConfigService],
-    }),
-    MongooseModule.forRootAsync({
-      connectionName: 'featureRequests',
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        uri: `${configService.get<string>('mongodb.uri')}featureRequests?authSource=admin`,
-      }),
-      inject: [ConfigService],
-    }),
-    MongooseModule.forRootAsync({
-      connectionName: 'acro',
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         uri: `${configService.get<string>('mongodb.uri')}/randomAcro?authSource=admin`,

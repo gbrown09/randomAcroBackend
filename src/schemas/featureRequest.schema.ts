@@ -1,8 +1,21 @@
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-export const FeatureRequest = new mongoose.Schema({
-  userId: String,
-  request: String,
-  userName: String,
-  done: Boolean,
-});
+export type FeatureRequestDocument = FeatureRequest & Document;
+
+@Schema()
+export class FeatureRequest {
+  @Prop()
+  userId: string;
+
+  @Prop()
+  request: string;
+
+  @Prop()
+  userName: string;
+
+  @Prop()
+  done: string;
+}
+
+export const FeatureRequestSchema = SchemaFactory.createForClass(FeatureRequest);

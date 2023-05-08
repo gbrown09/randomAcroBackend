@@ -1,5 +1,12 @@
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-export const Phil = new mongoose.Schema({
-  philText: String,
-});
+export type PhilDocument = Phil & Document;
+
+@Schema()
+export class Phil {
+  @Prop()
+  philText: string;
+}
+
+export const PhilSchema = SchemaFactory.createForClass(Phil);

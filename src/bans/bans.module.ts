@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { BansService } from './bans.service';
 import { BansController } from './bans.controller';
+import { Ban, BanSchema } from '../schemas/ban.schema';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Ban } from 'src/schemas/bans.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'Bans', schema: Ban, collection: 'bans' }], 'acro')],
+  imports: [MongooseModule.forFeature([{ name: Ban.name, schema: BanSchema, collection: 'bans' }])],
   controllers: [BansController],
   providers: [BansService],
 })
